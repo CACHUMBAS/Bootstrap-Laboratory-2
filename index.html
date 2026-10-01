@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio de Estilos OpenSpec</title>
+    
+    <!-- CDN Bootstrap 5.3.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Tipografía Moderna: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variables de color de nuestra marca (Constantes de diseño) */
+        :root {
+            --branding-oscuro: #1a252f;
+            --branding-primario: #2b2b2b;
+            --branding-destacado: #e67e22;
+            --texto-claro: #ffffff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f1f5f9;
+            color: #0f172a;
+            min-height: 100vh;
+        }
+
+        /* Aplicación en Barra de Navegación */
+        .custom-navbar {
+            background-color: var(--branding-oscuro) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Aplicación en Bloques Estructurales */
+        .bloque-contenido {
+            background-color: var(--branding-primario);
+            color: var(--texto-claro);
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Comportamiento interactivo */
+        .bloque-contenido:hover {
+            background-color: var(--branding-destacado);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(230, 126, 34, 0.4);
+        }
+
+        .badge-marca {
+            background-color: rgba(255, 255, 255, 0.15);
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de Navegación con color desde variable CSS -->
+    <nav class="navbar custom-navbar py-3">
+        <div class="container-fluid px-4">
+            <span class="navbar-brand text-white h1 mb-0 fw-bold d-flex align-items-center gap-2">
+                <span>🚀 OpenSpec Studio</span>
+                <span class="badge badge-marca rounded-pill px-2 py-1">Task 2</span>
+            </span>
+            <span class="text-white-50 small font-monospace d-none d-sm-inline">:root CSS Variables</span>
+        </div>
+    </nav>
+
+    <!-- Main con Rejilla Bootstrap y Clases Personalizadas -->
+    <main class="container my-5">
+        <div class="text-center mb-5">
+            <span class="badge bg-secondary bg-opacity-25 text-secondary border border-secondary border-opacity-25 rounded-pill px-3 py-1 mb-2 fw-semibold">Arquitectura Desacoplada</span>
+            <h1 class="h2 fw-bold text-dark">Componentes Reactivos con CSS Custom</h1>
+            <p class="text-muted small">Pasa el ratón sobre cualquiera de las tarjetas para observar la transición de color dinámica</p>
+        </div>
+
+        <div class="row g-4">
+            
+            <!-- Componente Alfa -->
+            <div class="col-md-6 mb-3">
+                <div class="p-4 border rounded shadow-sm bloque-contenido h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge badge-marca rounded-pill px-3 py-1">Módulo 01</span>
+                            <span class="small opacity-75">col-md-6</span>
+                        </div>
+                        <h3 class="fw-bold mb-3">Componente Alfa</h3>
+                        <p class="m-0 opacity-90 leading-relaxed">
+                            La estructura la maneja Bootstrap, pero el color y el efecto interactivo provienen de nuestro CSS estándar.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-top border-white border-opacity-10 d-flex justify-content-between align-items-center small opacity-75">
+                        <span>Hover: --branding-destacado</span>
+                        <span>&rarr;</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Componente Beta -->
+            <div class="col-md-6 mb-3">
+                <div class="p-4 border rounded shadow-sm bloque-contenido h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge badge-marca rounded-pill px-3 py-1">Módulo 02</span>
+                            <span class="small opacity-75">col-md-6</span>
+                        </div>
+                        <h3 class="fw-bold mb-3">Componente Beta</h3>
+                        <p class="m-0 opacity-90 leading-relaxed">
+                            Al reutilizar la clase, este bloque hereda inmediatamente toda nuestra paleta corporativa.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-top border-white border-opacity-10 d-flex justify-content-between align-items-center small opacity-75">
+                        <span>Hover: --branding-destacado</span>
+                        <span>&rarr;</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

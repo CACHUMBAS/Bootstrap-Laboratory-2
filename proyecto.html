@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primer Layout Bootstrap</title>
+    <!-- CDN Bootstrap 5.3.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tipografía Moderna: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            min-height: 100vh;
+        }
+
+        .navbar-custom {
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-modern {
+            border: 1px solid rgba(226, 232, 240, 0.8) !important;
+            border-radius: 1rem !important;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card-modern:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.07);
+        }
+
+        .tag-badge {
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar con clases requeridas: navbar navbar-dark bg-dark -->
+    <nav class="navbar navbar-dark bg-dark navbar-custom py-3">
+        <div class="container-fluid px-4">
+            <span class="navbar-brand mb-0 h1 fw-bold d-flex align-items-center gap-2">
+                <span>🚀 Laboratorio Dev</span>
+                <span class="badge bg-primary bg-opacity-25 text-primary-emphasis border border-primary border-opacity-25 rounded-pill tag-badge px-2 py-1">Task 1</span>
+            </span>
+            <span class="text-white-50 small d-none d-sm-inline">Grid System (9 / 3)</span>
+        </div>
+    </nav>
+
+    <!-- Main con contenedor y fila de Bootstrap -->
+    <main class="container my-5">
+        <div class="row g-4">
+            
+            <!-- Columna Principal: 75% del ancho (col-md-9) -->
+            <div class="col-md-9">
+                <div class="bg-light p-4 border card-modern h-100">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="badge bg-dark text-white rounded-pill px-3 py-1 tag-badge">Principal • 75%</span>
+                    </div>
+                    <h2 class="fw-bold tracking-tight text-dark mb-3">Sección de Contenido</h2>
+                    <p class="text-secondary leading-relaxed mb-4">
+                        Esta es la zona donde irá el texto principal de nuestra aplicación web. Al aplicar una proporción de 
+                        <strong class="text-dark">col-md-9</strong>, el contenido tiene suficiente jerarquía visual para desplegar 
+                        artículos, dashboards o paneles de trabajo complejos de manera confortable.
+                    </p>
+                    <div class="p-3 bg-white rounded-3 border border-light-subtle">
+                        <small class="text-muted d-block font-monospace">💡 Breakpoint activo: En pantallas medianas y grandes (&ge;768px) mantiene el 75% del ancho; en móviles se adapta automáticamente al 100%.</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barra Lateral: 25% del ancho (col-md-3) -->
+            <div class="col-md-3">
+                <div class="bg-secondary text-white p-4 border card-modern h-100 bg-gradient">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="badge bg-white text-dark rounded-pill px-3 py-1 tag-badge">Sidebar • 25%</span>
+                    </div>
+                    <h3 class="h4 fw-bold mb-3">Barra Lateral</h3>
+                    <p class="text-white-50 small leading-relaxed mb-4">
+                        Información complementaria, enlaces o estadísticas del sistema.
+                    </p>
+                    <hr class="border-white-50 opacity-25">
+                    <div class="small text-white-50">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Estado:</span>
+                            <span class="badge bg-success bg-opacity-75 text-white">Activo</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Grid:</span>
+                            <span class="text-white fw-bold">3 / 12 col</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
